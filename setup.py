@@ -99,7 +99,9 @@ else:
         return_mode="sm_list"
     )
 
-subprocess.run(["git", "submodule", "update", "--init", "csrc/flash_attn/cutlass"])
+# submodule "csrc/flash_attn/cutlass" is already included in the repo
+# subprocess.run(["git", "submodule", "update", "--init", "csrc/flash_attn/cutlass"])
+
 ext_modules.append(
     CUDAExtension(
         name="flash_attn_cuda",
