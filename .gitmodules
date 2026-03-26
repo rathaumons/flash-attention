@@ -1,4 +1,0 @@
-# Included
-# [submodule "csrc/flash_attn/cutlass"]
-# 	path = csrc/flash_attn/cutlass
-# 	url = https://github.com/NVIDIA/cutlass.git
