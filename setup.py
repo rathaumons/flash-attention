@@ -93,7 +93,7 @@ if bevx_cuda_arch is not None:
     arches = nvidia_arch.validate_arch_string(bevx_cuda_arch)
 else:
     arches = nvidia_arch.get_arches(
-        cuda_ver=cuda_version,
+        cuda_ver=torch.version.cuda,
         gpu_type=os.getenv("BEVX_GPU_TYPE", "cons+jets"),
         min_sm=os.getenv("BEVX_MIN_SM", "60"),
         return_mode="sm_list"
