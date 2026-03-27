@@ -96,9 +96,9 @@ else:
         nvidia_arch.get_arches(
             cuda_ver=torch.version.cuda,
             gpu_type=os.getenv("BEVX_GPU_TYPE", "cons+jets"),
-            min_sm=os.getenv("BEVX_MIN_SM", "60"),
+            min_sm=os.getenv("BEVX_MIN_SM", "75"),  # flash-attention doesn't support SM<75
         ),
-        exclude="10.1"  # PyTorch has never included 10.1
+        exclude="10.1"  # PyTorch has never included 10.1; avoid error with CUDA 12.8 and 12.9
     )
 
 # submodule "csrc/flash_attn/cutlass" is already included in the repo
